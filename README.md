@@ -1,5 +1,7 @@
 # Private SOC Lab Blueprint
 
+![Private SOC Lab Blueprint](assets/linkedin-project-banner.png)
+
 An isolated SOC lab blueprint for practicing monitoring, detection, investigation, and response with Security Onion, Wazuh, and a lightweight ELK stack.
 
 This project is designed for private virtual environments only: homelabs, classrooms, disposable training networks, and blue-team practice ranges.
