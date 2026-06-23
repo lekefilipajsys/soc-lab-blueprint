@@ -1,0 +1,31 @@
+<!--
+  Wazuh active response snippets for private lab testing.
+
+  Do not paste blindly. Confirm the rule IDs in your dashboard first.
+  Start with a short timeout and test on an expendable endpoint.
+
+  If you are editing an existing /var/ossec/etc/ossec.conf file, copy only the
+  <command> and <active-response> blocks into the existing <ossec_config>.
+-->
+<ossec_config>
+  <command>
+    <name>firewall-drop</name>
+    <executable>firewall-drop</executable>
+    <timeout_allowed>yes</timeout_allowed>
+  </command>
+
+  <!-- Example: temporarily block an SSH brute-force source on the affected endpoint. -->
+  <active-response>
+    <disabled>no</disabled>
+    <command>firewall-drop</command>
+    <location>local</location>
+    <rules_id>5712</rules_id>
+    <timeout>180</timeout>
+  </active-response>
+
+  <!--
+    Safer first step:
+    Keep this file as reference, tune the rule, then enable only one active-response
+    block at a time in the Wazuh manager configuration.
+  -->
+</ossec_config>

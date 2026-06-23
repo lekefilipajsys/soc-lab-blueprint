@@ -1,0 +1,61 @@
+# Local environment
+.env
+.env.*
+!.env.example
+
+# Runtime downloads and generated lab data
+_wazuh-runtime/
+**/_wazuh-runtime/
+data/
+logs/
+*.log
+*.pcap
+*.pcapng
+*.evtx
+
+# Generated certificates, keys, secrets, and credentials
+*.key
+*.pem
+*.p12
+*.crt
+*.csr
+*.jks
+*password*
+*secret*
+*token*
+*apikey*
+*api-key*
+
+# Docker and Elastic local state
+elasticsearch-data/
+kibana-data/
+logstash-data/
+wazuh-data/
+docker-volumes/
+
+# Virtual machine exports and disk images
+*.ova
+*.ovf
+*.vmdk
+*.vdi
+*.vhd
+*.vhdx
+*.qcow2
+*.iso
+
+# Editor and OS noise
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Test/cache output
+.pytest_cache/
+__pycache__/
+coverage/
+tmp/
+temp/
+

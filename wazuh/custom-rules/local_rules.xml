@@ -1,0 +1,32 @@
+<!--
+  Private SOC lab examples.
+  Add these under /var/ossec/etc/rules/local_rules.xml on the Wazuh manager,
+  then restart the manager container/service.
+-->
+<group name="soc_lab,">
+  <rule id="100100" level="3">
+    <match>SOC_LAB_TEST</match>
+    <description>SOC lab validation event observed</description>
+    <mitre>
+      <id>T1005</id>
+    </mitre>
+  </rule>
+
+  <rule id="100110" level="8">
+    <if_sid>60103</if_sid>
+    <match>EncodedCommand</match>
+    <description>PowerShell command line includes EncodedCommand</description>
+    <mitre>
+      <id>T1059.001</id>
+    </mitre>
+  </rule>
+
+  <rule id="100120" level="7">
+    <match>unauthorized_config_change</match>
+    <description>Lab application reported an unauthorized configuration change</description>
+    <mitre>
+      <id>T1562</id>
+    </mitre>
+  </rule>
+</group>
+

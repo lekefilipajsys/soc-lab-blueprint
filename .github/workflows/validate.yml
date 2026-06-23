@@ -1,0 +1,21 @@
+name: Validate
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  repo-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Validate Docker Compose
+        run: docker compose -f elk-lite/docker-compose.yml config
+
+      - name: Validate repository files
+        shell: pwsh
+        run: ./scripts/validate-repo.ps1
+
